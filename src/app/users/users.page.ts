@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-users',
@@ -8,20 +9,16 @@ import { NavController } from '@ionic/angular';
 })
 export class UsersPage implements OnInit {
 
-  public users: any[] = [
-    {
-      name: 'Thieu Mao',
-      age: 28,
-    },
-    {
-      name: 'Thu Ha',
-      age: 24,
-    }
-  ];
+  public users: any[] = [];
 
-  constructor(public navCtrl: NavController) {}
+  constructor(public route: ActivatedRoute, public navCtrl: NavController) {
+  }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.users =  params["users"];
+      console.log(this.users );
+    });
   }
 
   onBack() {
