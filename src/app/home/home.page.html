@@ -9,10 +9,28 @@
 <ion-content padding>
   <h1>These are some users</h1>
 
-  <ion-button (click)="onNavigateToUsers()">
+  <ion-button (click)="onNavigateToUsers()" color="gold">
     User List
   </ion-button>
 
+<!-- Icons -->
+<ion-button>
+  <ion-icon slot="start" name="star"></ion-icon>
+  Left Icon
+</ion-button>
+
+<ion-button>
+  Right Icon
+  <ion-icon slot="end" name="star"></ion-icon>
+</ion-button>
+
+<ion-button>
+  <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+</ion-button>
+
+<ion-button>
+  <ion-icon slot="icon-only" name="star"></ion-icon>
+</ion-button>
 </ion-content>
 
 <ion-footer padding>
