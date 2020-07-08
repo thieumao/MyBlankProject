@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
-import { ActivatedRoute } from "@angular/router";
+import { NavigationExtras, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -11,7 +11,7 @@ export class UsersPage implements OnInit {
 
   public users: any[] = [];
 
-  constructor(public route: ActivatedRoute, public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -22,7 +22,16 @@ export class UsersPage implements OnInit {
   }
 
   onBack() {
-    this.navCtrl.navigateBack('/home');
+    this.navCtrl.pop();
+  }
+
+  onNavigateToDetailUser(user) {
+    const navigationExtras: NavigationExtras = {
+      queryParams: {
+        user: user,
+      }
+    };
+    this.navCtrl.navigateForward('/user', navigationExtras);
   }
 
 }

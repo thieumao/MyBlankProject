@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="danger" (click)="onBack()">
+      Back
+    </ion-button>
+    <ion-title>User</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Name: {{ user.name }}</h2>
+  <p>Age: {{ user.age }}</p>
+
+  <ion-button (click)="backToHome()">Back to Home Screen</ion-button>
+</ion-content>
