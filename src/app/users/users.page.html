@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button color="danger" (click)="onBack()">
+      Back
+    </ion-button>
+    <ion-title>users</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-container *ngFor="let user of users">
+    <h2>Name: {{ user.name }}</h2>
+    <p>Age: {{ user.age }}</p>
+  </ng-container>
+</ion-content>
